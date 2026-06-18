@@ -86,4 +86,17 @@ LLM outputs and live data are not deterministic. Tests for analysis behavior sho
 
 ## AI Readiness Assets
 
-This repo currently has no repo-local MCP server, Codex skill, CodeGraph config, or generated-agent output directory. If one is added later, keep it under `projects/backend/TradingAgents` and document the invocation here and in `projects/backend/TradingAgents/AGENTS.zh-cn.md`.
+Repo-local CodeGraph readiness assets:
+- Configuration: `projects/backend/TradingAgents/.codegraph/config.json`.
+- Wrapper: `projects/backend/TradingAgents/scripts/codegraph.mjs`.
+- Lightweight generated outputs: `projects/backend/TradingAgents/.codegraph/out/codegraph.json` and `projects/backend/TradingAgents/.codegraph/out/codegraph.md`.
+- External CodeGraph CLI SQLite database: `projects/backend/TradingAgents/.codegraph/codegraph.db`.
+
+The SQLite database and generated output files are local generated artifacts. Refresh them with:
+
+```bash
+cd projects/backend/TradingAgents
+node scripts/codegraph.mjs
+```
+
+This repo currently has no repo-local MCP server, Codex skill, or generated-agent output directory. If one is added later, keep it under `projects/backend/TradingAgents` and document the invocation here and in `projects/backend/TradingAgents/AGENTS.zh-cn.md`.

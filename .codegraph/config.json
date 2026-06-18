@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "project": {
+    "id": "tradingagents",
+    "name": "TradingAgents",
+    "category": "backend-project"
+  },
+  "roots": [
+    "AGENTS.md",
+    "pyproject.toml",
+    "README.md",
+    "main.py",
+    "cli",
+    "tradingagents",
+    "tests",
+    "scripts"
+  ],
+  "entrypoints": [
+    "main.py",
+    "cli/main.py",
+    "tradingagents/default_config.py",
+    "tradingagents/graph/trading_graph.py"
+  ],
+  "exclude": [
+    ".git",
+    ".codegraph/out",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
+    ".venv",
+    "venv",
+    "env",
+    "dist",
+    "build",
+    "reports",
+    "**/data_cache",
+    "*.log",
+    "*.db",
+    "*.sqlite",
+    "*.sqlite3"
+  ],
+  "output": {
+    "json": ".codegraph/out/codegraph.json",
+    "markdown": ".codegraph/out/codegraph.md"
+  },
+  "database": {
+    "enabled": true,
+    "path": ".codegraph/codegraph.db",
+    "initCommand": [
+      "codegraph",
+      "init",
+      "-i"
+    ],
+    "syncCommand": [
+      "codegraph",
+      "sync"
+    ]
+  }
+}
